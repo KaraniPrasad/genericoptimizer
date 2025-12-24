@@ -1,0 +1,34 @@
+# Dependencies
+/node_modules
+/bower_components
+/vendor
+
+# IDE and Editor files
+.idea/
+.vscode/
+*.swp
+*.swo
+*.cache
+.project
+.classpath
+
+# Build artifacts and temporary files
+/dist
+/build
+/temp
+*.log
+*.tmp
+*.zip
+*.rar
+*.tar.gz
+/coverage
+
+# Operating system files
+.DS_Store
+Thumbs.db
+
+# Sensitive files (e.g., environment variables)
+.env
+.env.local
+
+

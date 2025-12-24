@@ -1,0 +1,38 @@
+parameters:
+  demand:
+    type: int
+    default: 1000
+  max_leadtime:
+    type: int
+    default: 5
+  lambda_cost:
+    type: float
+    default: 0.3
+
+variables:
+  - name: x
+    type: integer
+    lower: 0
+    upper: Capacity // SOQ
+  - name: y
+    type: binary
+
+objective:
+  var: x
+  scale: SOQ
+  terms:
+    - column: TotalScore
+      weight: 1.0
+    - column: UnitCost
+      weight: "-0.5 * lambda_cost"
+
+
+constraints:
+  - type: eligibility
+    var: y
+    condition: LeadTime <= max_leadtime
+
+  - type: sum_equals
+    var: x
+    multiplier: SOQ
+    value: demand

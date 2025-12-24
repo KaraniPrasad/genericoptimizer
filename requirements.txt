@@ -1,0 +1,6 @@
+streamlit
+pandas
+ortools
+pyyaml
+fastapi
+uvicorn
